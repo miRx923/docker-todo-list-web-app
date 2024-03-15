@@ -4,6 +4,10 @@
 
 <hr>
 
+<img src="demo_img/demo_img.png">
+
+<hr>
+
 ### List of Technologies Used:
 
 - 🐳 Docker
@@ -52,3 +56,7 @@
 - <b>Command Prompt (Windows):</b> 1. Navigate to the folder <code>./scripts/cmd_scripts</code> 2. Run <code>rm-db.bat</code>
 
 - <b>Bash (Linux):</b> Run <code>./scripts/bash_scripts/rm-db.sh</code>
+
+<hr>
+
+<h2 align=center>Thank you so much for using my application ❤️🐳</h2>
