@@ -1,0 +1,22 @@
+# File for "composing" the whole app together
+
+version: "3.9"
+services:
+    web:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "5000:5000"
+        volumes:
+            - ./web-src:/app/web-src
+
+    database:                             
+        image: postgres                   
+        environment:                      
+            - "DB_HOST=database"
+            - "POSTGRES_DB=todo_db" # name of the database
+            - "POSTGRES_USER=todo_user" # username
+            - "POSTGRES_PASSWORD=pass" # user password
+        volumes:
+            - ./db:/var/lib/postgresql/data

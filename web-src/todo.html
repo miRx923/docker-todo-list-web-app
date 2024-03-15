@@ -1,0 +1,47 @@
+<!-- TODO list landing page -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="web-src/style.css">
+    <title>TODO List</title>
+</head>
+<body>
+    <header>
+        <h1>TODO List</h1>
+    </header>
+
+    <div class="todo_list_div">
+        <!-- Text bar for writing a new task and Add button -->
+        <form action="/add_task" method="post">
+            <input type="text" class="new_task_text_bar" name="new_task" placeholder="Enter new task">
+            <input type="submit" class="add_button" value="ADD">
+        </form>
+
+        <ul>
+            <!-- Loop for printing all tasks from database -->
+            {% for task, completed in todo_list %}
+                <li>
+                    <!-- Checkbox and task text -->
+                    <form class="task_text" action="/toggle_completion/{{ task }}" method="get">
+                        <input type="checkbox" class="checkbox" {% if completed %}checked{% endif %} onchange="this.form.submit()">
+                        <span {% if completed %}style="text-decoration: line-through;"{% endif %}>{{ task }}</span>
+                    </form>
+
+                    <!-- Delete button -->
+                    <form action="/delete_task" method="post">
+                        <input type="hidden" name="task" value="{{ task }}">
+                        <input class="delete_button" type="submit" value="DEL">
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <footer>
+        <p>Created with ❤️ by miRx923</p>
+    </footer>
+</body>
+</html>
