@@ -4,7 +4,7 @@
 
 <hr>
 
-<img src="demo_img/demo_img.png">
+<img src="demo_img/demo_img_small.png">
 
 <hr>
 
